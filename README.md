@@ -180,3 +180,87 @@ Start Command: uvicorn app:app --host 0.0.0.0 --port $PORT$
 Environment Variables: Add your keys (DEEPGRAM_API_KEY, GEMINI_API_KEY, etc.) in the Render dashboard.
 
 Update Twilio: Change your Twilio Webhook to
+
+📞 How to Test MindMitra (Call the AI Therapist in Real Time)
+
+📞 METHOD 1 — Call Using a Regular Phone (US or International
+Open your phone dialer and call:
+
+📞 +1 267 494 6320 (your Twilio number)
+
+
+The call connects
+
+Twilio streams your voice to your server
+
+Deepgram converts it to text
+
+Gemini understands your emotions and replies
+
+Murf AI speaks the response through the call
+
+You will hear:
+
+“Welcome to your AI Therapist session. Tell me, what is the problem you are facing, and how can I help you feel better?”
+
+Now you can speak naturally — the therapist responds in real time.
+
+METHOD 2 — Free Calling From India (Using SIP Softphone)
+
+If you don’t want international call charges, test for FREE using VoIP.
+
+⭐ Step 1: Create a Twilio SIP Domain
+
+Go to:
+
+Twilio Console → Voice → SIP Domains → Create SIP Domain
+
+Example:
+
+mindmitra-test.sip.twilio.com
+
+
+In Voice Configuration, set:
+
+https://YOUR_DOMAIN/voice   (HTTP POST)
+
+⭐ Step 2: Create a SIP Credential
+
+Still inside your SIP domain:
+
+Add user1
+
+Add a password (e.g., mypassword123)
+
+Link it to your SIP domain
+
+⭐ Step 3: Install Zoiper on Your Phone
+
+Download Zoiper Lite → (Android/iOS)
+
+Login using:
+
+Username:
+
+user1@mindmitra-test.sip.twilio.com
+
+
+Password:
+
+mypassword123
+
+
+Host:
+
+mindmitra-test.sip.twilio.com
+
+
+You should now see Registered ✔
+
+⭐ Step 4: Dial 100 Inside Zoiper
+
+Press call → 100
+
+This triggers Twilio → hits your /voice endpoint → connects you to MindMitra.
+
+🎉 You are now talking to the AI Therapist for free, from India!
