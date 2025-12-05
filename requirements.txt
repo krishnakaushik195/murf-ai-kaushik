@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+requests
+websockets
+twilio
+google-generativeai
+python-dotenv
